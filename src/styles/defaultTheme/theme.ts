@@ -1,10 +1,12 @@
 
 export const defaultTheme = {
     colors: {
+        red:'#F25C',
         red100: '#F2778D',
         red200: '#E75480',
         red300: '#F23545',
         red400: '#ff000090',
+        pink100: '#F2A2D615',
         pink300: '#F4E5F145',
         pink400: '#F2E1D8',
         pink: '#F2E6D850',
@@ -21,13 +23,16 @@ export const defaultTheme = {
         white: '#FFFFFF' ,
         white100: '#F2F2F2',
         grey:'#8697A6',
+        grey200:'#BDBFBF20',
         black300: '#00000030',
         black700:'#00000070',
         black900: '#000000',
         black100: '#00000020'
     },
     fonts:{
+        Poppins400: 'Poppins_400Regular',
         Poppins500: 'Poppins_500Medium'
+        
 
     }
 

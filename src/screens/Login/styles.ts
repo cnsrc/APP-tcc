@@ -56,7 +56,10 @@ export const  NageteButtonTitle = styled.Text`
 
 `
 
-export const ButtonTest = styled.TouchableOpacity``
+export const ButtonTest = styled.TouchableOpacity`
+
+
+`
 
 
 

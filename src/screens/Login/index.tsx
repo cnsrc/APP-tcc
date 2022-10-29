@@ -1,5 +1,6 @@
 import { Image, Text, TouchableOpacity, View } from "react-native";
-
+import {useNavigation, useRoute} from '@react-navigation/native'
+import {NativeStackScreenProps} from '@react-navigation/native-stack'
 import logoImage from "../../assets/Saudebaby.png";
 import styled from "styled-components/native";
 import { 
@@ -13,26 +14,40 @@ import {
     NageteButtonTitle, 
     ButtonTest,
 } from "./styles";
-
-
+import { StackRoutes } from "../../routes/index.routes";
+import { useState } from "react";
 
 //01 função ok
 // 02 retornar um html
 
-export function Login (){
+export function Login ({navigation} :NativeStackScreenProps<StackRoutes>){ 
+
+    function handleNavegateToRegistration(){
+        navigation.navigate('Registration')
+    }
+
+
+   
+    
+
+  
+
     return (
         <LoginContainer>
             <Header>
                 <Logo source={logoImage}/>
                 <Title>
-                    Registre os momentos
+                    Registre os momento
                     {'\n'}do seu filho
                 </Title>
+                <Text style={{fontSize: 30, color: 'blue'}}>
+                   
+                </Text>
             </Header>
 
             <Footer>
                 <FooterWraper>
-                    <NavegateButton activeOpacity={.7}>
+                    <NavegateButton activeOpacity={.7} onPress={handleNavegateToRegistration}>
                         <NageteButtonTitle>Criar Conta</NageteButtonTitle>
                     </NavegateButton>
 
@@ -41,6 +56,7 @@ export function Login (){
                     </NavegateButton>
 
                 </FooterWraper>
+                
                 
                 
 
