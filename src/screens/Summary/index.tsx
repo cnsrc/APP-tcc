@@ -1,23 +1,40 @@
 import { Header } from "../../components/Header";
-import { App, Growth, HeaderContainer, Temperature, TextGrowth, TextTemperature } from "./style";
-
+import {SumaryContainer,
+        SumaryContaint,
+        CardTitle,
+        Card
+    } from "./style";
+import {useState} from 'react'
+import { GrowModal } from "./Components/GrowModal";
 export function Summary (){
-    return (
-        <App>
-            <Header title="Resumo"/>
-            <HeaderContainer>
-                <Growth>
-                    <TextGrowth>
-                        Crescimento
-                    </TextGrowth>
-                </Growth>
+    const [isVisebleGrownModal, setIsVisibleGrownModal] = useState(false)
 
-                <Temperature>
-                    <TextTemperature>
+        function OpenGrowModal (){
+            setIsVisibleGrownModal(true)
+        }
+        function CloseGrowModal (){
+            setIsVisibleGrownModal(false)
+        }
+    return (
+        <SumaryContainer>
+            <Header title="Resumo"/>
+
+            <SumaryContaint>
+                <Card onPress={OpenGrowModal}>
+                    <CardTitle>
+                        Crescimento
+                    </CardTitle>
+                </Card>
+
+                <Card>
+
+                    <CardTitle>
                         Temperatura
-                    </TextTemperature>
-                </Temperature>
-            </HeaderContainer>
-        </App>
+                    </CardTitle>
+                </Card>
+                
+            </SumaryContaint>
+            <GrowModal CloseGrowModal={CloseGrowModal} visible={isVisebleGrownModal}/>
+        </SumaryContainer>
     )
 }

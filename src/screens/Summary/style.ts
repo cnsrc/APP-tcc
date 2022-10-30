@@ -1,35 +1,25 @@
 import styled from "styled-components/native";
 
-export const App = styled.View`
+export const SumaryContainer = styled.View`
+    flex: 1;
 `
-export const HeaderContainer = styled.View`
-    margin-top: 89px;
-`
-export const Growth = styled.TouchableOpacity`
-    width: 153px;
-    height: 117px;
-    align-items:center;
-    justify-content: center;
-    border-radius:10px;
-    background: aqua;
+export const SumaryContaint = styled.View`
+    margin-top: 85px;
+    padding: 0 20px;
+    justify-content: space-between;
     flex-direction: row;
 `
-export const Temperature = styled.TouchableOpacity`
-    width: 153px;
+export const Card = styled.TouchableOpacity`
+    width: 46%;
     height: 117px;
     align-items:center;
     justify-content: center;
     border-radius:10px;
-    background: aqua;
+    background:  ${({theme}) => theme.colors.aqua};
 `
-export const TextGrowth = styled.Text`
+export const CardTitle = styled.Text`
     color: #fff;
-    font-size:22px; 
+    font-size:20px; 
     font-family: ${({theme}) => theme.fonts.Poppins500};
 
-`
-export const TextTemperature = styled.Text`
-    color: #fff;
-    font-size:22px;
-    font-family: ${({theme}) => theme.fonts.Poppins500};
 `

@@ -18,6 +18,7 @@ export const defaultTheme = {
         blue300: '#969CB230',
         blue500: '#0583F250',
         blue600: '#363F5F',
+        blue800: '#0583F280',
         aqua:'#00FFFF50',
         aqua100:'#00FFFF60',
         white: '#FFFFFF' ,

@@ -1,43 +1,51 @@
 import { Keyboard, Modal, ModalProps, ScrollView, TouchableWithoutFeedback, View } from "react-native";
-import { MaterialCommunityIcons } from '@expo/vector-icons'; 
+import { AntDesign } from '@expo/vector-icons'; 
+
+
 import { defaultTheme } from "../../../../styles/defaultTheme/theme";
 import { AddVaccineModalContainer,
         InputsArea,
-
         Footer,
         Form,
         InputModal,
         Overlay,
-        TextArea
+        TextArea,
+        Icon
     } from "./style";
 import { Button } from "../../../../components/Button";
 
-interface AddVaccineModalProps extends ModalProps{
-    closeModal: () => void
+interface MedicationModalProps extends ModalProps {
+    CloseModal: ()=> void
 }
 
-export function AddVaccineModal (props: AddVaccineModalProps){
-    const {bluedark} = defaultTheme.colors
+
+
+export function MedicationModal (props:MedicationModalProps){
+
     
-    function handleCloseModal(){
-        
-        props.closeModal();
+    const {bluedark} = defaultTheme.colors
+
+    function  HandleCloseModal(){
+        props.CloseModal()
     }
+   
 
     return(
         
-            <Modal {...props} transparent statusBarTranslucent animationType="fade">
+            <Modal transparent statusBarTranslucent animationType="fade" {...props}>
                 <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
                     <Overlay>
                         <AddVaccineModalContainer>
-                        <MaterialCommunityIcons name="needle" size={90} color="black" />
+                        <Icon name="medicinebox"/>
+
+                        
                             <Form>
                                 <InputsArea >
-                                    <InputModal placeholder='Nome da vacina' placeholderTextColor={bluedark}/>
+                                    <InputModal placeholder='Nome do rémedio' placeholderTextColor={bluedark}/>
                                     
-                                    <InputModal placeholder='Data' placeholderTextColor={bluedark}/>
-
                                     <InputModal placeholder='Dose' placeholderTextColor={bluedark}/>
+
+                                    <InputModal placeholder='Data & hora' placeholderTextColor={bluedark}/>
                                     
                                     <TextArea placeholder='Adicionar nota' placeholderTextColor={bluedark}/>
                                 
@@ -45,7 +53,7 @@ export function AddVaccineModal (props: AddVaccineModalProps){
                             
 
                                 <Footer>
-                                    <Button title="Salvar vacina" onPress={handleCloseModal}/>
+                                    <Button title="Salvar rémedio" onPress={HandleCloseModal}/>
                                 </Footer>    
 
                             </Form>

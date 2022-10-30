@@ -1,8 +1,12 @@
 import styled from "styled-components/native";
+import { AntDesign } from '@expo/vector-icons'; 
 
 export const Overlay = styled.View`
   flex: 1;
   background-color: ${({theme})=> theme.colors.black300};
+`
+export const Icon = styled(AntDesign)`
+    font-size: 76px;
 `
 export const AddVaccineModalContainer = styled.View`
   margin-top: 150px;
