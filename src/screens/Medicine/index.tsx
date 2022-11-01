@@ -33,7 +33,7 @@ export function Medication (){
 
     return(
         <MedicationContainer>
-            <Header title="Rémedio"></Header>
+            
             <MedicationContent>
                 <Medicines>
                     <Medicine>

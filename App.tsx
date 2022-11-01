@@ -4,6 +4,10 @@ import { defaultTheme } from './src/styles/defaultTheme/theme';
 import { useFonts, Poppins_500Medium, Poppins_400Regular} from '@expo-google-fonts/poppins';
 import { Medication } from './src/screens/Medicine';
 import { Summary } from './src/screens/Summary';
+import { Router } from './src/routes/index.routes';
+import { Growth } from './src/screens/Growth';
+import { UserContextProvider } from './src/Context/UserContext';
+import { Registration } from './src/screens/Registration';
 
 
 export default function App() {
@@ -19,7 +23,8 @@ export default function App() {
       <StatusBar
           background-Color='transparent'
           style='dark'
-          translucent ={true} 
+          translucent ={true}
+          
     
         />
         
@@ -27,9 +32,9 @@ export default function App() {
               
               fontLoader === true
               && (
-                <>
-                  <Summary/>
-                </>
+                <UserContextProvider>
+                  <Router/>
+                </UserContextProvider>
              ) 
              
                        

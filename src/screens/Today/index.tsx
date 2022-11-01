@@ -1,65 +1,91 @@
 import {  ScrollView, Text} from "react-native";
 import { AntDesign } from '@expo/vector-icons';
-import { Config, Content, Date, Form, Header, TexttipsFive, TexttipsFour, TexttipsOn, TexttipsSix, TexttipsThree, TexttipsTwo, TipsFive, TipsFour, TipsOn, TipsSix, TipsThree, TipsTwo, TodayConateiner } from "./style";
+import { Config,
+         TodayContent, 
+         Month,
+         MonthTitle,
+         TipsToday, 
+         Header,
+         Tips,
+         TitleTips,
+         TodayConateiner,
+         RegisterConfig,
+         Names
+     } from "./style";
+import { UserContext } from "../../Context/UserContext";
+import {useContext} from 'react'
 
 
 export function Today (){
+     const {user} = useContext(UserContext)
     return(
-        <ScrollView style={{flexGrow: 1}}   showsVerticalScrollIndicator={false}>
+<ScrollView style={{flexGrow: 1}}   showsVerticalScrollIndicator={false}>
 
-        <TodayConateiner >
-                <Date>
-                     1
-             {'\n'} Mês
-                </Date>
-            <Content>
-                <Config>
-                <AntDesign name="user" size={24} color="black" />
-                </Config>
+     <TodayConateiner >
+                <Month>
+                    <MonthTitle>
+                           1
+                    </MonthTitle>
+                    <MonthTitle>
+                         mês 
+                    </MonthTitle>
+                </Month>
+          <TodayContent>
 
-            <Header>
-              <Form>
-                    <TipsOn activeOpacity={0.4}>
-                         <TexttipsOn>
-                            Como esquentar a mamadeira
-                         </TexttipsOn>
-                    </TipsOn>
-                    <TipsTwo activeOpacity={0.4}>
-                         <TexttipsTwo>
-                          Tirando a temperatura da criança
-                         </TexttipsTwo>
-                    </TipsTwo>
+               <RegisterConfig>
+                    <Config>
+                         <Names>
+                              {`${user?.name} ${user?.childName}`}
 
-                    <TipsThree activeOpacity={0.4}>
-                         <TexttipsThree>
-                          Dicas para desmame noturno
-                         </TexttipsThree>
-                    </TipsThree>
-      
-                    <TipsFour activeOpacity={0.4}>
-                         <TexttipsFour>
-                          Dicas para o desenvolvimento do bebê
-                         </TexttipsFour>
-                    </TipsFour>
+                         </Names>
+                    <AntDesign name="user" size={24} color="black" />
+                    </Config>
+               </RegisterConfig>
 
-                    <TipsFive activeOpacity={0.4}>
-                         <TexttipsFive>
-                          Como aliviar o primeiro resfriado do bebê
-                         </TexttipsFive>
-                    </TipsFive>
-
-                    <TipsSix activeOpacity={0.4} >
-                        <TexttipsSix>
-                          Estimulado o desenvolvimento cerebal
-                        </TexttipsSix>
-                    </TipsSix>
-
+               <Header>
+                    <TipsToday>
+                         <Tips activeOpacity={0.4}>
+                              <TitleTips>
+                              Como esquentar a mamadeira
+                              </TitleTips>
+                         </Tips>
                     
-              </Form>
-            </Header>
-            </Content>
+                         <Tips activeOpacity={0.4}>
+                              <TitleTips>
+                              Tirando a temperatura da criança
+                              </TitleTips>
+                         </Tips>
+                              
+                         <Tips activeOpacity={0.4}>
+                              <TitleTips>
+                              Dicas para desmame noturno
+                              </TitleTips>
+                         </Tips>
+                              
+                         <Tips activeOpacity={0.4}>
+                              <TitleTips>
+                              Dicas para o desenvolvimento do bebê prematuro
+                              </TitleTips>
+                         </Tips>
+                         
+                         <Tips activeOpacity={0.4}>
+                              <TitleTips>
+                              Como aliviar o primeiro resfriado do bebê
+                              </TitleTips>
+                         </Tips>
+                              
+                         <Tips activeOpacity={0.4}>
+                              <TitleTips>
+                              Estimulando o desenvolvimento cerebal 
+                              </TitleTips>
+                         </Tips>
+                         
+                    
+                    </TipsToday>
+               </Header>
+          </TodayContent>
                  
-        </TodayConateiner>
-        </ScrollView>
+     </TodayConateiner>
+</ScrollView>
     )
 }

@@ -3,15 +3,15 @@ import { Header } from "../Header";
 import { Input } from "./styles";
 
 interface InputRegisterProps extends TextInputProps {
-    title: string
+   
 }
 
-export function InputRegister({title, ...rest}: InputRegisterProps){
+export function InputRegister({...rest}: InputRegisterProps){
     return(
         <View>
             <Input
                 {...rest}
-                placeholder={title}
+                
             />
                 
         </View>

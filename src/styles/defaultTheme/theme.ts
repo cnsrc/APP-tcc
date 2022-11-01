@@ -23,6 +23,7 @@ export const defaultTheme = {
         aqua100:'#00FFFF60',
         white: '#FFFFFF' ,
         white100: '#F2F2F2',
+        grey400: '#CCCCCC40',
         grey:'#8697A6',
         grey200:'#BDBFBF20',
         black300: '#00000030',

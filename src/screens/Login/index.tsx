@@ -15,22 +15,13 @@ import {
     ButtonTest,
 } from "./styles";
 import { StackRoutes } from "../../routes/index.routes";
-import { useState } from "react";
 
-//01 função ok
-// 02 retornar um html
 
 export function Login ({navigation} :NativeStackScreenProps<StackRoutes>){ 
-
+  
     function handleNavegateToRegistration(){
         navigation.navigate('Registration')
     }
-
-
-   
-    
-
-  
 
     return (
         <LoginContainer>

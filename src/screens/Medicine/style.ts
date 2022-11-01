@@ -28,6 +28,7 @@ export const Medicine = styled.View`
         border-radius: 5px;
 
         background-color: ${({theme})=>theme.colors.white};
+        margin-top: 8px;
         flex-direction: row;
         justify-content: space-between;
 
@@ -35,6 +36,7 @@ export const Medicine = styled.View`
 `
 export const MedicineActions = styled.View`
         flex-direction: row;
+         
         align-items: center;
         
 `

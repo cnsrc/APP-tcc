@@ -1,27 +1,22 @@
 import styled from "styled-components/native";
 
 export const RegistrationContainer = styled.View`
-    flex: 1 ;
-
-    background-color: ${({theme}) => theme.colors.pink400};
+        flex: 1 ;
+        background-color: ${({theme}) => theme.colors.pink400};
  `   
 export const Logo =styled.Image`
-        margin-top: -40px;
+        margin: 0 auto;
 `
+export const Header = styled.View`
+        margin-top: 100px;
+ `
 
 export const RegistrationContent = styled.View`
         flex: 1;
-       
-        margin-top: auto;
-
+        margin-top: 30px;
+ 
 `
-export const Header = styled.View`
-        margin-top: 135px;
-        margin-bottom: 30px;
-        align-items: center;
-        justify-content: center;
- `
-export const Door = styled.View`
+export const InputsArea = styled.View`
         padding: 24px;
         width: 100%;
     
@@ -38,7 +33,12 @@ export const Button = styled.TouchableOpacity`
         
         
 `
-
+export const Footer = styled.View`  
+        flex: 1;
+        margin-top: 70px;
+        background-color: ${props => props.theme.colors.blue300};
+        align-items: center;
+`
 export const OpenButton = styled.Text`
         color: ${({theme}) => theme.colors.white} ;
         font-size: 18px;
@@ -46,11 +46,4 @@ export const OpenButton = styled.Text`
         
         
         
-`
-export const Footer = styled.View`  
-        width: 100%;
-        height: 100%;
-        margin-top: 60px;
-        background-color: ${props => props.theme.colors.blue300};
-        align-items: center;
 `

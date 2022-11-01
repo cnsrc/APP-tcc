@@ -1,4 +1,4 @@
-import {ModalProps, Modal, TouchableWithoutFeedback} from 'react-native'
+import {ModalProps, Modal, TouchableWithoutFeedback, ScrollView} from 'react-native'
 import {
     Overlay,
     GrowModalContainer,
@@ -31,24 +31,27 @@ export function GrowModal(props: growModalProps){
                                 <Label>Data
                                 {'\n '} 
                                 </Label>
+                            <ScrollView>
+                                
                                 <Data>02/09/2022</Data>
-                                <Data>02/09/2022</Data>
+                                <Data>18/07/2022</Data>
+                            </ScrollView>
                             </HistoricType>
 
                             <HistoricType>
                                 <Label>Peso
                                 {'\n (kg) '}
                                 </Label>
-                                <Data>02/09/2022</Data>
-                                <Data>02/09/2022</Data>
+                                <Data>2,250kg</Data>
+                                <Data>2,100kg </Data>
                             </HistoricType>
 
                             <HistoricType>
                                 <Label>Altura
                                 {'\n (cm) '}
                                 </Label>
-                                <Data>02/09/2022</Data>
-                                <Data>02/09/2022</Data>
+                                <Data>1,48 cm</Data>
+                                <Data>1,42 cm</Data>
                             </HistoricType>
 
                         </Historic>

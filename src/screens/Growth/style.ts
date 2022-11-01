@@ -1,112 +1,72 @@
-import styled from "styled-components/native"
-export const App = styled.View`
+import styled from "styled-components/native";
 
+export const GrowthContainer = styled.View`
+    flex: 1;
+    background-color: ${({theme}) => theme.colors.white100};
+`
+export const GrowthContent = styled.View`
+    padding: 0  14px;
+
+    
+`
+export const Main= styled.View`
+    margin-top: 66px;
+    align-items: center;
+  
+`
+export const GrowthTitle = styled.Text`
+    font-size: 22px;
+    font-family: ${({theme}) => theme.fonts.Poppins500};
+    color: ${({theme}) => theme.colors.blue600};
+`
+export const WeightMark = styled.View`
+    align-items: center;
+    margin-top: 16px;
+    padding: 16px;
+    flex-direction: row;
+    justify-content: space-between;
+`
+export const Weight = styled.Text`
+    font-size: 15px;
+    font-family: ${({theme}) => theme.fonts.Poppins400};
+    color: ${({theme}) => theme.colors.grey};
 `
 export const HeaderContainer = styled.View`
 
 `
-export const GrowthName = styled.Text`
-    color: ${({theme})=> theme.colors.grey};
-    font-size: 27px;
-    font-family: ${({theme})=> theme.fonts.Poppins500};
-    padding: 71px;
-    margin-top: 52px;
-
+export const Markings = styled.View`
+    flex-direction: row;
+    justify-content: space-between;
 `
-export const Weight = styled.View`
-    width: 36px;
-    height: 23px;
+export const MarkingOfValues = styled.View`
+    height: 96px;
+    width: 100px;
+    align-items: center;
+    padding: 18px;
+    background-color: ${({theme}) => theme.colors.grey400};
+    border-radius: 8px;
+`
+export const ValueRegister = styled.Text`
+    margin-top: 3px;
+    font-size: 12.64px;
+    font-family: ${({theme}) => theme.fonts.Poppins500};
+    color: ${({theme}) => theme.colors.blue600};
+`
+export const Line = styled.View`
+    height: 2px;
+    padding: 0 4px;
+    background: ${({theme}) => theme.colors.blue600};
+    width: 90%;
+    margin:0 auto;
+    margin-top: 3px;
     
 `
-export const NameWeight = styled.Text`
-    color: ${({theme})=> theme.colors.grey};
-    font-size: 15px;
-    font-family: ${({theme})=> theme.fonts.Poppins500};
-
-`
-export const Component = styled.View`
-
-`
-export const Marking = styled.View`
-
-`
-export const Register = styled.TouchableOpacity`
-
-`
-export const RegisterCurrent = styled.TouchableOpacity`
-
-`
-export const RegisterImc = styled.TouchableOpacity`
-
-`
-export const TextRegister = styled.Text`
-    width: 72.08px;
-    height: 21px;
-    color: ${({theme})=> theme.colors.blue600};
-    font-size: 14px;
-    font-family: ${({theme})=> theme.fonts.Poppins500};
-`
-export const TextRegisterCurrent = styled.Text`
-    width: 72.08px;
-    height: 21px;
-    color: ${({theme})=> theme.colors.blue600};
-    font-size: 14px;
-    font-family: ${({theme})=> theme.fonts.Poppins500};
-`
-export const TextRegisterImc = styled.Text`
-    width: 72.08px;
-    height: 21px;
-    color: ${({theme})=> theme.colors.blue600};
-    font-size: 14px;
-    font-family: ${({theme})=> theme.fonts.Poppins500};
-`
-export const HeightMarking = styled.View`
-
-`
-export const Width = styled.View`
-    width: 36px;
-    height: 23px;
-    font-family: ${({theme})=> theme.fonts.Poppins500};
-
-`
-export const TextWidth = styled.Text`
-    color: ${({theme})=> theme.colors.grey};
-    font-size: 15px;
+export const Separator = styled.View`
+    height: 2px;
+    padding: 0 4px;
+    background: ${({theme}) => theme.colors.blue300};
+    width: 90%;
+    margin:0 auto;
+    margin-top: 48px;
     
-`
-export const RegisterHeight = styled.TouchableOpacity`
-
-`
-export const Registercurret = styled.TouchableOpacity`
-
-`
-export const RegisterIMC = styled.TouchableOpacity`
-
-`
-export const TextRegisterHeight = styled.Text`
-    width: 72.08px;
-    height: 21px;
-    color: ${({theme})=> theme.colors.blue600};
-    font-size: 14px;
-    font-family: ${({theme})=> theme.fonts.Poppins500};
-`
-export const TextRegistercurrent = styled.Text`
-    width: 72.08px;
-    height: 21px;
-    color: ${({theme})=> theme.colors.blue600};
-    font-size: 14px;
-    font-family: ${({theme})=> theme.fonts.Poppins500};
-`
-export const TextRegisterIMC = styled.Text`
-    width: 72.08px;
-    height: 21px;
-    color: ${({theme})=> theme.colors.blue600};
-    font-size: 14px;
-    font-family: ${({theme})=> theme.fonts.Poppins500};
-`
-export const Measure = styled.View`
-    width: 327px;
-`
-export const Size = styled.View `
-    width: 88.32px;
 `

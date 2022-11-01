@@ -10,8 +10,7 @@ import { InputRegister } from "../../components/Input";
 export function Confirmation (){
     function handleShowEmailMenssage(){
         Alert.alert(
-            'Email enviado com sucesso',
-            'Um email foi enviado para o endereço da sua conta. Verifique seu emaipara continuar.'
+            'Um email foi enviado para o endereço da sua conta. Verifique seu email para continuar.'
         )
     }
     return (
@@ -26,7 +25,7 @@ export function Confirmation (){
                     
                     <Form>
                       
-                        <InputRegister  title="Email" />
+                        <InputRegister />
                         
 
                     </Form>

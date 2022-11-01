@@ -41,13 +41,12 @@ export const Label = styled.Text`
     font-family: ${({theme}) => theme.fonts.Poppins400};
     font-size: 15px;
     color: ${({theme}) => theme.colors.grey};
-    margin-bottom:6px;
+    margin-bottom:15px;
 `
-
 export const Data = styled.Text`
     font-family: ${({theme}) => theme.fonts.Poppins500};
     font-size: 16px;
-    color: ${({theme}) => theme.colors.blue800};
+    color: ${({theme}) => theme.colors.bluedark};
     margin-bottom: 12px;
     margin-right: 18px;
 `

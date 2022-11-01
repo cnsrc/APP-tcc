@@ -28,7 +28,7 @@ export function Vaccination (){
     return(
 
             <VaccinationContainer>
-                <Header title="Vacina"/>
+                
 
                 <VaccinationContent>
                     <Vaccines>

@@ -6,6 +6,7 @@ import {SumaryContainer,
     } from "./style";
 import {useState} from 'react'
 import { GrowModal } from "./Components/GrowModal";
+import { TemperatureModal } from "./Components/TemperatureModal";
 export function Summary (){
     const [isVisebleGrownModal, setIsVisibleGrownModal] = useState(false)
 
@@ -15,6 +16,7 @@ export function Summary (){
         function CloseGrowModal (){
             setIsVisibleGrownModal(false)
         }
+        
     return (
         <SumaryContainer>
             <Header title="Resumo"/>
@@ -26,8 +28,7 @@ export function Summary (){
                     </CardTitle>
                 </Card>
 
-                <Card>
-
+                <Card onPress={TemperatureModal}>
                     <CardTitle>
                         Temperatura
                     </CardTitle>
@@ -35,6 +36,7 @@ export function Summary (){
                 
             </SumaryContaint>
             <GrowModal CloseGrowModal={CloseGrowModal} visible={isVisebleGrownModal}/>
+            {/*<GrowTemperatureModal />*/}
         </SumaryContainer>
     )
 }
