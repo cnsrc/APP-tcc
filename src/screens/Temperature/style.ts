@@ -1,4 +1,5 @@
 import styled from "styled-components/native";
+import Ruler from 'react-native-animated-ruler';
 
 export const App = styled.View`
 
@@ -8,28 +9,6 @@ export const Container = styled.View`
     align-items: center;
     justify-content: end;
 `
-export const ContainerHeader = styled.View`
+export const TemperatureContainer = styled.View``
    
-   
-   `
-export const Footer = styled.View`
-    align-items: center;
-    margin-top: 231px;
-
-`
-export const Button = styled.TouchableOpacity`
-    width: 283px;
-    height: 70px;
-    align-items:center;
-    justify-content: center;
-    border-radius:10px;
-    background: aqua;
-
-`
-export const ButtonText = styled.Text`
-    width: 232px;
-    height: 30px;
-    color: #fff;
-    font-size: 20px;
-    font-family:${({theme})=> theme.fonts.Poppins500};
-`
+export const RulerContent = styled(Ruler)

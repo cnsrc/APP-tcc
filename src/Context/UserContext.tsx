@@ -17,7 +17,8 @@ interface UserContextType {
     userIsLoged: boolean,
     changeUserStatusLogin: () => void, 
     createNewUser: (user: UserProps) => void,
-    user: UserProps | undefined, 
+    user: UserProps | undefined,
+    appIsLoading: boolean,
 }
 
 export const UserContext = createContext({}as UserContextType)
@@ -31,6 +32,8 @@ interface UserContextProviderProps {
 export function UserContextProvider (props:UserContextProviderProps){
     const [userIsLoged, setUserIsloged] = useState (false)
     const [user, setUser] = useState<UserProps>()
+    const [appIsLoading, setAppIsLoading] = useState (false)
+
 
     function changeUserStatusLogin(){
 
@@ -43,19 +46,27 @@ export function UserContextProvider (props:UserContextProviderProps){
     }
 
     async function getSaveDatas(){
-        const dataKey = '@saudebaby'
-        const userResponse = await AsyncStorage.getItem(`${dataKey}/user`)
-        if(userResponse){
-            const storage = JSON.parse(userResponse)
-            setUser(storage)
+        setAppIsLoading(true)
 
+        try {
+            const dataKey = '@saudebaby'
+            const userResponse = await AsyncStorage.getItem(`${dataKey}/user`)
+            if(userResponse){
+                const storage = JSON.parse(userResponse)
+                setUser(storage)
+    
+            }
+    
+            const isLoggedResponse = await AsyncStorage.getItem(`${dataKey}/isLogged`)
+            if(isLoggedResponse){
+                const storage = JSON.parse(isLoggedResponse)
+                setUserIsloged(true)
+            }
+        } catch (error) {
+            console.warn(error)    
         }
 
-        const isLoggedResponse = await AsyncStorage.getItem(`${dataKey}/isLogged`)
-        if(isLoggedResponse){
-            const storage = JSON.parse(isLoggedResponse)
-            setUserIsloged(true)
-        }
+        setAppIsLoading(false)
 
     }
 
@@ -89,7 +100,8 @@ export function UserContextProvider (props:UserContextProviderProps){
                 changeUserStatusLogin,
                 userIsLoged,
                 createNewUser,
-                user
+                user,
+                appIsLoading
             }
         }
         > 

@@ -1,9 +1,7 @@
-
-import {TextInputProps,View} from 'react-native'
-import { InputRegister } from '../../../components/Input'
-import {Control, Controller} from 'react-hook-form'
-import { CreateNewAcount } from '../../../screens/Registration'
-import { ErrorMenssage } from './styles'
+import React from 'react'
+import { Control, Controller } from 'react-hook-form'
+import { TextInputProps } from 'react-native'
+import {  ErrorMenssage, Input } from './styles'
 
 interface InputFormProps extends TextInputProps {
     name: string
@@ -11,14 +9,14 @@ interface InputFormProps extends TextInputProps {
     error?: string | undefined | any
 }
 
-export const InputFormRegister = ({control, name, error, ...rest}: InputFormProps) => {
+export const InputModal = ({control, name, error, ...rest}: InputFormProps) => {
     return(
         <>
             <Controller 
                 control={control}
                 name={name}
                 render={({field:{onChange,value}}) => (
-                    <InputRegister
+                    <Input
                         {...rest}
                         value={value}           
                         onChangeText={onChange}
@@ -30,5 +28,4 @@ export const InputFormRegister = ({control, name, error, ...rest}: InputFormProp
         </>
 
     )
-    
 }

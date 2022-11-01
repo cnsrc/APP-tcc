@@ -4,7 +4,7 @@ import styled from "styled-components/native";
 export const QueryContainer = styled.View`
     flex:1;
 `
-export const ConsultationContent = styled.ScrollView`
+export const ConsultationContent = styled.View`
     flex: 1;
 
 `
@@ -45,6 +45,7 @@ export const Consultation = styled.View`
         height: 48px;
         align-items: center;
         padding: 0 9px 0 19.31px;
+        margin-top: 14px;
 
         border-left-width:3px;
         border-left-color: ${({theme})=>theme.colors.red200};

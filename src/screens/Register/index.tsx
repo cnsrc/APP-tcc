@@ -34,6 +34,7 @@ export function Register ({navigation}:NativeStackScreenProps<StackRegisterScree
           icon={<MaterialCommunityIcons name="book-open-page-variant-outline" size={24} color={red}/>}
         />
         <Card title='Temperatura' 
+        onPress={()=> {navigation.navigate('Temperature')}}
           icon={<Fontisto name="thermometer-alt" size={24} color={red}/>}
         />
       </CardsWrraper>

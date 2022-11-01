@@ -1,12 +1,10 @@
 import { NavigationContainer } from '@react-navigation/native';
 import {useContext} from 'react'
 
-import { Login } from '../screens/Login';
-import { Connect } from '../screens/Connect';
-import { Registration } from '../screens/Registration';
 import { UnAuthRoutes } from './unAuht.routes';
 import { AuthRoutes } from './auth/bottom.routes';
 import { UserContext } from '../Context/UserContext';
+import { Loader } from '../components/Loader';
 
 
 export type StackRoutes = {
@@ -16,14 +14,23 @@ export type StackRoutes = {
     
 }
 
-
-
 export function Router(){
-    const {userIsLoged} = useContext (UserContext)
+    const {userIsLoged,appIsLoading} = useContext (UserContext)
     return(
-        <NavigationContainer >
-            {userIsLoged === true ? <AuthRoutes/> : <UnAuthRoutes/>}           
-        </NavigationContainer>
+        <>
+        {
+            appIsLoading ? 
+            <Loader/> : 
+            (
+                <NavigationContainer >
+                     {userIsLoged === true ? <AuthRoutes/> : <UnAuthRoutes/>}           
+                </NavigationContainer>
+            )
+        }
+        
+        
+        </>
+        
 
     )
 }

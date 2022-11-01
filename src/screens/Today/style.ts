@@ -1,55 +1,72 @@
 import styled from "styled-components/native";
+import { AntDesign } from '@expo/vector-icons';
 
 export const TodayConateiner = styled.View`
     background-color: #BDBFBF20;
     justify-content: center;
 `
-export const TodayContent = styled.View`
-    flex: 1;
-    align-items: center;
-    justify-content: center;
+export const ImageContainer = styled.ImageBackground`
+    width: 100%;
+    height: 348px;
+    padding-top: 33px;
+    padding-bottom: 13px;
+    justify-content: space-between;
 
 `
-export const RegisterConfig = styled.View`
-
-`
-export const Names = styled.Text`
+export const Heading = styled.View`
+    margin-top: 9px;
+    padding: 0 9px;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 `
+
+export const UserNames = styled.Text`
+    font-size: 20px;
+    font-family: ${({theme})=> theme.fonts.Poppins500};
+    color: ${({theme})=> theme.colors.black700};
+`
+
 export const Config = styled.TouchableOpacity`
     background-color: ${({theme})=> theme.colors.pink300};
-    width: 93px;
-    height: 91px;
-    border-radius: 1568.94px;
-    
-`
-export const Month = styled.View`
-    padding:21px;
-    align-items: center;
-   
-    
-`
-export const MonthTitle = styled.Text`
-    
-`
-export const Header = styled.View`
-    margin-top: 450px;
+    width: 80px;
+    height: 80px;
+    border-radius: 46.5px;
     align-items: center;
     justify-content: center;
-    color: ${({theme}) => theme.colors.blue};
-    font-size: 18px;
+    
+`
+
+export const Icon = styled(AntDesign)`
+    font-size: 30px;
+    color: ${({theme})=> theme.colors.black700};
+`
+
+export const CreatedDateGap = styled.View`
+    padding-left: 21px;
+    width: 70px;
+    align-items: center;
+`
+
+export const GapCounter = styled.Text`
+    font-size: 20px;
+    font-family: ${({theme})=> theme.fonts.Poppins500};
+    color: ${({theme})=> theme.colors.white};
+`
+export const TipsToday = styled.View`
+    margin-top: 33px;
+    padding: 0 20px;
+`
+export const Tip = styled.View`
     border-radius: 8px;
+    min-height: 107px;
+    margin-top: 16px;
     background-color: white;
     padding: 16px 0px 16px 20px ;
-    -ms-grid-row-align: 44px;
+
 `
-export const Form = styled.View`
-    justify-content: center;
-    align-items: center;
-` 
-export const TipsToday = styled.View`
-`
-export const Tips = styled.View`
-`
-export const TitleTips = styled.Text`
+export const TitleTip = styled.Text`
+    font-size: 16px;
+    font-family: ${({theme})=> theme.fonts.Poppins500};
+    color: ${({theme})=> theme.colors.black900};
 `

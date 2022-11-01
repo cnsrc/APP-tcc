@@ -4,8 +4,8 @@ export const ButtonContainer = styled.TouchableOpacity`
     background-color: ${({theme}) =>theme.colors.aqua};
     width: 100%;
     height: 70px;
-    align-items: flex-end;
-    flex-direction: row-reverse;
+   align-items: center;
+   justify-content: center;
     border-radius: 8px;
 `
 export const Title = styled.Text`

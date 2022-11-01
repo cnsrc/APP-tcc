@@ -30,9 +30,6 @@ export const InputsArea = styled.View`
 
 `
 
-
-
-
 export const TextArea = styled.TextInput`
 height: 100px;
     border-radius: 8px;

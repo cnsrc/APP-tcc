@@ -1,19 +1,20 @@
-import {  ScrollView, Text} from "react-native";
-import { AntDesign } from '@expo/vector-icons';
+import {  ScrollView} from "react-native";
+
 import { Config,
-         TodayContent, 
-         Month,
-         MonthTitle,
-         TipsToday, 
-         Header,
-         Tips,
-         TitleTips,
+         ImageContainer,
+         TipsToday,         
+         Tip,
+         TitleTip,
          TodayConateiner,
-         RegisterConfig,
-         Names
+         Heading,
+         UserNames,
+         Icon,
+         CreatedDateGap,
+         GapCounter,
      } from "./style";
 import { UserContext } from "../../Context/UserContext";
 import {useContext} from 'react'
+import  ChildPhoto  from '../../assets/childPhoto.svg'
 
 
 export function Today (){
@@ -22,68 +23,64 @@ export function Today (){
 <ScrollView style={{flexGrow: 1}}   showsVerticalScrollIndicator={false}>
 
      <TodayConateiner >
-                <Month>
-                    <MonthTitle>
-                           1
-                    </MonthTitle>
-                    <MonthTitle>
-                         mês 
-                    </MonthTitle>
-                </Month>
-          <TodayContent>
-
-               <RegisterConfig>
+          <ImageContainer 
+               source={{uri: 'https://images.unsplash.com/photo-1604917621956-10dfa7cce2e7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=362&q=70'}}
+          >
+               <Heading>
+                    <UserNames>
+                         {`${user?.name} & ${user?.childName}`}
+                    </UserNames>
                     <Config>
-                         <Names>
-                              {`${user?.name} ${user?.childName}`}
-
-                         </Names>
-                    <AntDesign name="user" size={24} color="black" />
+                         <Icon name="user"/>
                     </Config>
-               </RegisterConfig>
-
-               <Header>
-                    <TipsToday>
-                         <Tips activeOpacity={0.4}>
-                              <TitleTips>
-                              Como esquentar a mamadeira
-                              </TitleTips>
-                         </Tips>
-                    
-                         <Tips activeOpacity={0.4}>
-                              <TitleTips>
-                              Tirando a temperatura da criança
-                              </TitleTips>
-                         </Tips>
-                              
-                         <Tips activeOpacity={0.4}>
-                              <TitleTips>
-                              Dicas para desmame noturno
-                              </TitleTips>
-                         </Tips>
-                              
-                         <Tips activeOpacity={0.4}>
-                              <TitleTips>
-                              Dicas para o desenvolvimento do bebê prematuro
-                              </TitleTips>
-                         </Tips>
+               </Heading>
+               <CreatedDateGap>
+                    <GapCounter>1</GapCounter>
+                    <GapCounter>Mês</GapCounter>
+               </CreatedDateGap>
+          </ImageContainer>
+          
+               <TipsToday>
+                    <Tip activeOpacity={0.4}>
+                         <TitleTip>
+                         Como esquentar a mamadeira
+                         </TitleTip>
+                    </Tip>
+               
+                    <Tip activeOpacity={0.4}>
+                         <TitleTip>
+                         Tirando a temperatura da criança
+                         </TitleTip>
+                    </Tip>
                          
-                         <Tips activeOpacity={0.4}>
-                              <TitleTips>
-                              Como aliviar o primeiro resfriado do bebê
-                              </TitleTips>
-                         </Tips>
-                              
-                         <Tips activeOpacity={0.4}>
-                              <TitleTips>
-                              Estimulando o desenvolvimento cerebal 
-                              </TitleTips>
-                         </Tips>
+                    <Tip activeOpacity={0.4}>
+                         <TitleTip>
+                         Dicas para desmame noturno
+                         </TitleTip>
+                    </Tip>
                          
+                    <Tip activeOpacity={0.4}>
+                         <TitleTip>
+                         Dicas para o desenvolvimento do bebê prematuro
+                         </TitleTip>
+                    </Tip>
                     
-                    </TipsToday>
-               </Header>
-          </TodayContent>
+                    <Tip activeOpacity={0.4}>
+                         <TitleTip>
+                         Como aliviar o primeiro resfriado do bebê
+                         </TitleTip>
+                    </Tip>
+                         
+                    <Tip activeOpacity={0.4}>
+                         <TitleTip>
+                         Estimulando o desenvolvimento cerebal 
+                         </TitleTip>
+                    </Tip>
+                    
+               
+               </TipsToday>
+               
+          
                  
      </TodayConateiner>
 </ScrollView>
