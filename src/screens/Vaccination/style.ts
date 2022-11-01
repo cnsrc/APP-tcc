@@ -11,7 +11,7 @@ export const VaccinationContent = styled.View`
     padding-bottom: 30px;
 `
 
-export const Vaccines = styled.ScrollView`
+export const Vaccines = styled.View`
     padding: 0px 30px;
     
 `

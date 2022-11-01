@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { Text, ScrollView, TouchableWithoutFeedback } from "react-native";
+import { useState} from "react";
 import { Button } from "../../components/Button";
-import { Header } from "../../components/Header";
+import {FlatList} from 'react-native'
+
 import { AddVaccineModal } from "./Components/AddVaccineModal";
 import {
         VaccinationContainer,
@@ -12,10 +12,22 @@ import {
          VaccineDate,
          ButtonWrapper,
 
-    } from "./style";
+} from "./style";
+
+
+
+
+export interface vaccineProps {
+    id: string,
+    name: string,
+    date: string,
+    dose: string,
+    observation: string | undefined,
+}
 
 export function Vaccination (){
     const [modalIsVisible, setModaIsVisible] = useState(false)
+    const [vaccines, setVaccines] = useState<vaccineProps[]>([])
 
     function closeModal(){
         setModaIsVisible(false)
@@ -25,6 +37,11 @@ export function Vaccination (){
         setModaIsVisible(true)
     }
 
+    function addNewVaccine(newVaccine: vaccineProps){
+        const vaccinesWithMoreOneVaccine = [newVaccine, ...vaccines]
+        setVaccines(vaccinesWithMoreOneVaccine)
+    }
+
     return(
 
             <VaccinationContainer>
@@ -32,14 +49,21 @@ export function Vaccination (){
 
                 <VaccinationContent>
                     <Vaccines>
-                        <Vaccine>
-                            <VaccineName>
-                                Polimelite             
-                            </VaccineName>
-                            <VaccineDate>
-                                12/10/2022
-                            </VaccineDate>
-                        </Vaccine>
+                        <FlatList
+                            data={vaccines}
+                            keyExtractor={item => item.id}
+                            renderItem= {({item})=> (
+                                <Vaccine>
+                                    <VaccineName>
+                                        {item.name}            
+                                    </VaccineName>
+                                    <VaccineDate>
+                                        {item.date}
+                                    </VaccineDate>
+                                </Vaccine>
+                            )}
+                        />
+                        
                     
                     </Vaccines>
                     
@@ -56,6 +80,7 @@ export function Vaccination (){
             <AddVaccineModal 
                 visible={modalIsVisible}
                 closeModal={closeModal}
+                addNewVaccine={addNewVaccine}
             />
 
         </VaccinationContainer>
