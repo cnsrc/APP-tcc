@@ -10,7 +10,7 @@ export const GrowthContent = styled.View`
     
 `
 export const Main= styled.View`
-    margin-top: 66px;
+    margin-top: 50px;
     align-items: center;
   
 `
@@ -48,7 +48,7 @@ export const MarkingOfValues = styled.View`
 `
 export const ValueRegister = styled.Text`
     margin-top: 3px;
-    font-size: 12.64px;
+    font-size: 11.94px;
     font-family: ${({theme}) => theme.fonts.Poppins500};
     color: ${({theme}) => theme.colors.blue600};
 `

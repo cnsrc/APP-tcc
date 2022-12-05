@@ -11,9 +11,6 @@ import { GrowthContainer,
          Separator,
          Markings,
          Line,
-         
-         
-         
 } from "./style";
 import { AddButton } from "../../components/AddButton";
 
@@ -33,7 +30,7 @@ export function Growth (){
                 <Weight>
                     Peso
                 </Weight>
-                <AddButton/>
+                <AddButton>  </AddButton>
             </WeightMark>           
             <HeaderContainer>
 
@@ -82,7 +79,7 @@ export function Growth (){
                     <Weight>
                         Altura
                     </Weight>
-                    <AddButton/>
+                    <AddButton></AddButton>
                 </WeightMark>           
             
             <HeaderContainer>

@@ -1,4 +1,5 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { Diary } from '../../screens/Diary'
 import { Growth } from '../../screens/Growth'
 import { Register } from '../../screens/Register'
 import { Temperature } from '../../screens/Temperature'
@@ -8,8 +9,9 @@ import { HealthRoutes } from './topBottom.routes'
 export type StackRegisterScreensProps =  {
     Register: undefined,
     Grow: undefined,
-    Temperature: undefined,
     Health: undefined
+    Diary: undefined
+    Temperature: undefined,
 }
 
 
@@ -22,8 +24,9 @@ export function RegisterStackRoutes(){
         <Navigator screenOptions={{headerShown: false}}>
             <Screen name="Register" component={Register}/>
             <Screen name="Grow" component={Growth}/>
-            <Screen name="Temperature" component={Temperature}/>
             <Screen name="Health" component={HealthRoutes}/>
+            <Screen name="Diary" component={Diary}/>
+            <Screen name="Temperature" component={Temperature}/>
         </Navigator>
     )
     

@@ -1,19 +1,17 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 
-import { v4 as uuidv4 } from 'uuid';
 import * as yup from 'yup';
 import { Keyboard, KeyboardAvoidingView, Platform, ScrollView ,TouchableOpacity,TouchableWithoutFeedback } from "react-native";
-
-
 import logoImage from "../../assets/Saudebaby.png";
 
-import { Button, RegistrationContainer,
-        Logo,
-        InputsArea,
-        Footer,
-        Header,
-        OpenButton,
-        RegistrationContent
+import { Button,
+         RegistrationContainer,
+         Logo,
+         InputsArea,
+         Footer,
+         Header,
+         OpenButton,
+         RegistrationContent
 } from "./styles";
 import {  useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup"
@@ -23,9 +21,9 @@ import { UserContext } from "../../Context/UserContext";
 
 const newCreateNewAconutSchema = yup.object().shape({
     name: yup.string().required("Esse campo é obrigatório"),
-    email: yup.string().required("Esse campo é obrigatório"),
-    password: yup.string().min(8,'O minimo de caracteres é 8') .required("Esse campo é obrigatório"),
-    kinship: yup.string().required('Esse campo é obrugatório'),
+    email: yup.string().email('Este email está incorreto').required("Esse campo é obrigatório"),
+    password: yup.string().min(6,'O minimo de caracteres é 6') .required("Esse campo é obrigatório"),
+    kinship: yup.string().required('Esse campo é obrigatório'),
     childName: yup.string().required("Esse campo é obrigatório"),
 
 

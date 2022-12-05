@@ -6,14 +6,24 @@ import { Today } from "../../screens/Today"
 import {AntDesign} from '@expo/vector-icons'
 import { SimpleLineIcons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons'; 
-import { StackRoutes } from "./stack.routes"
 import { RegisterStackRoutes } from "./register.routes"
+import { Tips } from "../../screens/Tips"
+import { MenuConfig } from "../../screens/MenuConfig"
+import { ProfileChild } from "../../screens/ProfileChild"
+import { Summary } from "../../screens/Summary"
+import { View } from "react-native"
 
 
-type BottomRoutesProps = {
-    TodayRoot: undefined,
+export type BottomRoutesProps = {
+    Today: undefined,
     RegisterRoot: undefined,
     Consultation: undefined,
+    MenuConfig: undefined, 
+    ProfileChild: undefined,
+    Summary: undefined,
+    Tips: {
+        id: string,
+    }
 
 }
 const {Navigator,Screen} = createBottomTabNavigator<BottomRoutesProps>()
@@ -32,8 +42,8 @@ export function AuthRoutes() {
 
         >
             <Screen 
-                name="TodayRoot" 
-                component={StackRoutes}
+                name="Today" 
+                component={Today}
                 options={{
                     tabBarIcon: ({color,size}) => (
                         <AntDesign name="heart" size={size} color={color} />
@@ -61,7 +71,37 @@ export function AuthRoutes() {
                     title:"Consulta"
                 }}
             />
+            <Screen
+                name="Tips"
+                component={Tips}
+                options= {{
+                    tabBarButton: () => null
+                }}
+            />
             
+            <Screen
+                name="MenuConfig"
+                component={MenuConfig}
+                options={{
+                    tabBarButton: () => null
+                }}
+            />
+
+            <Screen
+                name="ProfileChild"
+                component={ProfileChild}
+                options={{
+                    tabBarButton: () => null
+                }}
+            />
+
+            <Screen
+                name="Summary"
+                component={Summary}
+                options={{
+                    tabBarButton: () => null
+                }}
+            />        
         </Navigator>
     )
 }

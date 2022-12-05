@@ -3,31 +3,38 @@ import styled from "styled-components/native"
 export const ConnectContainer = styled.View`
     flex: 1;
     background-color: ${props => props.theme.colors.pink400};
-
 `
 export const Header = styled.View`
     margin-top: 123px;
     align-items: center;
     justify-content: center;
-
-    
-    
  `
 export const Form = styled.View`
-        width: 100%;
-        padding: 24px;
-        margin-top: 31px;
-    
+    width: 100%;
+    padding: 24px;
+    margin-top: 31px;
+`
+export const FieldForm = styled.View`
+    width: 100%;
+    height: 56px;
+    background-color: #fff;
+    justify-content: center;
+    padding: 16px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+`
+export const InputsArea = styled.TextInput`
+    font-size: 15px;
+    font-family: ${props => props.theme.fonts.Poppins400};
+    color: ${props => props.theme.colors.grey};
 `
 export const ConnectContent = styled.View`
-    flex: 1;
-        
+    flex: 1;    
 `
 export const Logo = styled.Image`
 `
 export const TextEx =styled.Text`
-     color:  ${props => props.theme.colors.bluedark};
-
+    color:  ${props => props.theme.colors.bluedark};
 `
 
 export const ToExchange = styled.TouchableOpacity`
@@ -50,9 +57,6 @@ export const OpenButton = styled.Text`
     font-size: 16px;
     text-align: center;
     color: white;
-
-
-
 `
 export const Footer = styled.View`  
     height: 100px;

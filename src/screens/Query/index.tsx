@@ -1,7 +1,21 @@
 import { Entypo } from '@expo/vector-icons'; 
-import { useState } from 'react';
+import { useState, useEffect} from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import { TouchableOpacity, FlatList } from "react-native";
+import { TouchableOpacity, FlatList, Alert, Platform} from "react-native";
+
+
+/*
+    mysqlLite
+    prisma,
+    zod,
+    typescript,
+    nodejs,
+    express/ fastfy,
+    cours,
+    muita sourte,
+
+*/
 import { AddButton } from '../../components/AddButton';
 import { Header } from '../../components/Header';
 import { ConsultationModal } from './components/ConsultationModal';
@@ -35,12 +49,35 @@ export function Query (){
     function closeConsultationModal(){
         setConsultationModalIsVisible(false)
     }
-    function addNewConsultation(consultation: ConsultationProps){
+
+   
+
+    async function getConsultation(){
+        try {
+            const dataKey = '@saudebaby'
+            const consultationsResponse = await AsyncStorage.getItem(`${dataKey}/consultations`)
+            if(consultationsResponse){
+                const storage = JSON.parse(consultationsResponse)
+                setConsultaions(storage)
+            }
+        } catch (error) {
+            console.warn(error)
+        }
+    }
+    async function addNewConsultation(consultation: ConsultationProps){
+
+        const dataKey = '@saudebaby'
         const consultationsWitMoreOneConsult = [consultation, ...consultatios]
+        const consulltationsToLocalSorage = JSON.stringify(consultationsWitMoreOneConsult)
+        await AsyncStorage.setItem(`${dataKey}/consultations`,consulltationsToLocalSorage)
+
         setConsultaions(consultationsWitMoreOneConsult)
     }
 
     console.log(consultatios)
+    useEffect(() => {
+        getConsultation()
+    }, [])
     return(
  
         <QueryContainer>
@@ -49,6 +86,7 @@ export function Query (){
             <ConsultationContent>
 
                 <Month>
+
                     <TouchableOpacity>
                         < Entypo name="chevron-left" size={24} color="black" />
                     </TouchableOpacity>

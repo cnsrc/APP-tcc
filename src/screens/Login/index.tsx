@@ -28,7 +28,7 @@ export function Login ({navigation} :NativeStackScreenProps<StackRoutes>){
             <Header>
                 <Logo source={logoImage}/>
                 <Title>
-                    Registre os momento
+                    Registre os momentos
                     {'\n'}do seu filho
                 </Title>
                 <Text style={{fontSize: 30, color: 'blue'}}>

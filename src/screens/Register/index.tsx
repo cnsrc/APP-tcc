@@ -21,7 +21,7 @@ export function Register ({navigation}:NativeStackScreenProps<StackRegisterScree
         <Card title='Crescimento'
           onPress={() => navigation.navigate('Grow')} 
           icon={<FontAwesome5 name="ruler" size={24} color={red}/>}
-          activeOpacity={0}
+          activeOpacity={0.8}
         />
         <Card 
           title='Saúde'
@@ -31,6 +31,7 @@ export function Register ({navigation}:NativeStackScreenProps<StackRegisterScree
       </CardsWrraper>
       <CardsWrraper>
         <Card title='Diário' 
+        onPress={() =>navigation.navigate('Diary')}
           icon={<MaterialCommunityIcons name="book-open-page-variant-outline" size={24} color={red}/>}
         />
         <Card title='Temperatura' 

@@ -89,9 +89,9 @@ export function UserContextProvider (props:UserContextProviderProps){
         
     }
 
-    useEffect(() => {
-        
+    useEffect(() => { 
         getSaveDatas()
+        //AsyncStorage.clear()
     }, [])
 
     return(

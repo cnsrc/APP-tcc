@@ -1,23 +1,24 @@
 import styled from "styled-components/native";
-import { AntDesign } from '@expo/vector-icons'; 
+import { FontAwesome } from '@expo/vector-icons'; 
 
 export const Overlay = styled.View`
   flex: 1;
   background-color: ${({theme})=> theme.colors.black300};
 `
-export const Icon = styled(AntDesign)`
+export const Icon = styled(FontAwesome)`
+    margin-top: 34px;
     font-size: 76px;
 `
 export const AddVaccineModalContainer = styled.View`
-  margin-top: 150px;
+  margin-top: 168px;
   flex: 1;
   align-items: center;
-  padding: 17px 20px  30px 20px;
+  padding: 17px 20px  30px 20px; 
 
   background-color: ${({theme})=> theme.colors.white100};
 `
-export const Form = styled.ScrollView`
-    margin-top: 16px;
+export const Form = styled.View`
+    margin-top: 30px;
     border-top-width: 1px;
     padding-right: 22px;
     border-top-color:  ${({theme})=> theme.colors.black900};
@@ -26,6 +27,7 @@ export const Form = styled.ScrollView`
 
 `
 export const InputsArea = styled.View`
+   margin-top: 31px;
    width: 100%;
 
 `
@@ -43,7 +45,7 @@ height: 100px;
     color: ${({theme})=> theme.colors.black700};
 `
 export const Footer = styled.View`
-    margin-top: 20px;
+    margin-top: 24px;
     width: 100%;
     padding: 0px 50px
  

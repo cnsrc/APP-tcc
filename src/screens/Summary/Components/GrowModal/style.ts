@@ -11,10 +11,10 @@ export const GrowModalContainer = styled.View`
     flex: 1;
     border-radius: 8px;
     padding: 42px 20px ;
-    
-    
 `
+export const GrowModalContent = styled.View`
 
+`
 export const Title = styled.Text`
     font-family: ${({theme}) => theme.fonts.Poppins500};
     font-size: 18px;

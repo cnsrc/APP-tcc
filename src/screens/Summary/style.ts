@@ -15,11 +15,11 @@ export const Card = styled.TouchableOpacity`
     align-items:center;
     justify-content: center;
     border-radius:10px;
-    background:  ${({theme}) => theme.colors.aqua};
+    background:  ${({theme}) => theme.colors.blue900};
 `
 export const CardTitle = styled.Text`
     color: #fff;
     font-size:20px; 
-    font-family: ${({theme}) => theme.fonts.Poppins500};
+    font-family: ${({theme}) => theme.fonts.Poppins600};
 
 `

@@ -5,6 +5,7 @@ export const defaultTheme = {
         red100: '#F2778D',
         red200: '#E75480',
         red300: '#F23545',
+        red5400: '#FF2C2480',
         red400: '#ff000090',
         pink100: '#F2A2D615',
         pink300: '#F4E5F145',
@@ -14,11 +15,14 @@ export const defaultTheme = {
         pink600: '#F252D860',
         blue: '#969CB2',
         bluedark: '#0583F2',
+        blue1001: '#4E45D6',
         blue100: '#0583F210',
+        blue200: '#96BCFF',
         blue300: '#969CB230',
         blue500: '#0583F250',
         blue600: '#363F5F',
         blue800: '#0583F280',
+        blue900: '#6545D640',
         aqua:'#00FFFF50',
         aqua100:'#00FFFF60',
         white: '#FFFFFF' ,
@@ -32,10 +36,10 @@ export const defaultTheme = {
         black100: '#00000020'
     },
     fonts:{
+        Poppins: 'Poppins_400Regular_Italic',
         Poppins400: 'Poppins_400Regular',
-        Poppins500: 'Poppins_500Medium'
-        
-
+        Poppins500: 'Poppins_500Medium',
+        Poppins600: 'Poppins_600SemiBold',
     }
 
 } as const

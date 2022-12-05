@@ -1,4 +1,3 @@
-
 import {TextInputProps,View} from 'react-native'
 import { InputRegister } from '../../../components/Input'
 import {Control, Controller} from 'react-hook-form'

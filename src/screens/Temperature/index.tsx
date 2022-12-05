@@ -1,9 +1,9 @@
 import { Header } from "../../components/Header";
-import {View} from 'react-native'
 import Ruler from 'react-native-animated-ruler';
 import { TemperatureContent } from "./style";
 import {TemperatureContainer,ButtonWrapper} from './style'
 import { Button } from "../../components/Button";
+import { SaveTemperature } from "./Components";
  export function Temperature (){
     function getValue(value : number){
         console.log(value)
@@ -11,7 +11,7 @@ import { Button } from "../../components/Button";
     }
     return(
         <TemperatureContainer>
-            <Header title="temperatura" />
+            <Header title="Temperatura" />
             <TemperatureContent>
                 <Ruler
                 style={{ borderRadius: 10, marginLeft: 'auto',marginRight: 'auto', marginTop: 90}}
@@ -36,20 +36,20 @@ import { Button } from "../../components/Button";
                 numberFontFamily='System'
                 numberSize={40}
                 numberColor='#000000'
-                unit='cm'
+                unit='°'
                 unitBottom={20}
                 unitFontFamily='System'
                 unitColor='#888888'
                 unitSize={16}
             
             />
-            <ButtonWrapper>
 
-                <Button title="hi"/>
+            <ButtonWrapper onPress = {SaveTemperature}>
+                <Button title="Salvar temperatura"/>
             </ButtonWrapper>
 
             </TemperatureContent>
-
+            
             
         </TemperatureContainer>
     )

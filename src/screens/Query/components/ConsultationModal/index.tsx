@@ -1,4 +1,4 @@
-import {  Modal, ModalProps, TouchableWithoutFeedback, TextInput } from "react-native";
+import {  Modal, ModalProps, TouchableWithoutFeedback, TextInput, ScrollView } from "react-native";
 import * as yup from 'yup'
 import {useForm} from 'react-hook-form'
 import {yupResolver} from '@hookform/resolvers/yup'
@@ -9,7 +9,7 @@ const newConsultationSchema = yup.object().shape({
     day: 
         yup.number().typeError('apenas digite números').max(32,'digite apenas dias válídos')
         .min(1,'não existe dia negativo ou zero').required('Esse campo é obrigatório'),
-    time: yup.number().typeError('apenas digite números').required('esste campo é obrigatório')
+    time: yup.string().required('esste campo é obrigatório')
 
 })
 
@@ -18,6 +18,7 @@ import { AddVaccineModalContainer,
         Footer,
         Form,
         Overlay,
+        Icon,
         
     } from "./style";
 import { Button } from "../../../../components/Button";
@@ -65,20 +66,25 @@ export function ConsultationModal ({closeConsultationModal ,addNewConsultation,.
                 <TouchableWithoutFeedback onPress={() => closeConsultationModal()}>
                     <Overlay>
                         <AddVaccineModalContainer>
+                            <Icon name="calendar-check-o"/>
+                                
                             <Form>
-                                <InputsArea >
+
+                                <InputsArea>
+                                
                                 
                                     <InputModal 
-                                        error={errors.cosultation && errors.cosultation.message}
+                                        error={errors.consultation && errors.consultation.message}
                                         control={control} 
                                         name='consultation' 
-                                        placeholder='Consulta' 
-                                        placeholderTextColor={bluedark} 
+                                        placeholder='Espécialidade' 
+                                        placeholderTextColor={bluedark}
+                                     
                                     />
                                     
                                     <InputModal
                                         error={errors.day && errors.day.message}
-                                        placeholder='dia' 
+                                        placeholder='Data' 
                                         keyboardType="numeric" 
                                         placeholderTextColor={bluedark}
                                         control={control}
@@ -88,21 +94,28 @@ export function ConsultationModal ({closeConsultationModal ,addNewConsultation,.
                                     <InputModal
                                         error={errors.time && errors.time.message}
                                         control={control}
-                                        name='time'
-                                        keyboardType="numeric"   
-                                        placeholder='horário' 
+                                        name='time'                                        
+                                        placeholder='Horário' 
+                                        placeholderTextColor={bluedark}
+                                    />          
+
+                                    <InputModal
+                                        control={control}
+                                        name='place'  
+                                        placeholder='Local' 
                                         placeholderTextColor={bluedark}
                                     />                                
+
+
                                 </InputsArea>
                             
-
+                                
                                 <Footer>
                                     <Button title="Salvar Consulta" onPress={handleSubmit(handleRegisterNewConsultation)}/>
                                 </Footer>    
-
                             </Form>
+                            
                         </AddVaccineModalContainer>
-
                     </Overlay>
         
 

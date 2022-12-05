@@ -1,19 +1,18 @@
-import { Image, Keyboard, Text, TouchableOpacity, TouchableWithoutFeedback, TextInput} from "react-native";
-
-import styled from "styled-components/native";
+import { Keyboard, TouchableWithoutFeedback} from "react-native";
 import LogoImagem from "../../assets/Saudebaby.png";
-import { InputRegister } from "../../components/Input";
-import { Input } from "../../components/Input/styles";
+
 import { Button,
-    ConnectContainer,
-    Footer,
-    Form,
-    Header,
-    Logo,
-    OpenButton,
-    ConnectContent,
-    TextEx,
-    ToExchange,
+         ConnectContainer,
+         Footer,
+         Form,
+         FieldForm,
+         InputsArea,
+         Header,
+         Logo,
+         OpenButton,
+         ConnectContent,
+         TextEx,
+         ToExchange,
 } from "./style";
 import { StackRoutes } from "../../routes/index.routes";
 
@@ -30,16 +29,18 @@ export function Connect (){
                 <ConnectContent>
                     
                     <Form>
-                      
-                        <InputRegister  title="Email" />
-                        <InputRegister title="Senha" autoComplete="password" secureTextEntry/>
+                        <FieldForm>
+                            <InputsArea placeholder="Email"/>
+                        </FieldForm>
+                        <FieldForm>
+                            <InputsArea placeholder="Senha"/>
+                        </FieldForm>
+                        
                         <ToExchange activeOpacity={.8}>
                             <TextEx>Esqueceu sua senha?</TextEx>
-                            
                         </ToExchange>
 
                     </Form>
-                        
 
                     <Footer>
                         

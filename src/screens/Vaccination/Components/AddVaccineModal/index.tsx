@@ -21,7 +21,7 @@ interface AddVaccineModalProps extends ModalProps{
     closeModal: () => void,
     addNewVaccine: (newVaccine: vaccineProps) => void
 }
-
+ 
 const newVaccineSchema = yup.object().shape({
     name: yup.string().required('Este campo é obrigatório'),
     dose: yup.number().typeError('Apenas números').required('Dose é um campo é obrigatório'),

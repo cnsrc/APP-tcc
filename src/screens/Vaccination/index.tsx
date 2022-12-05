@@ -1,21 +1,18 @@
-import { useState} from "react";
+import { useState, useEffect} from "react";
 import { Button } from "../../components/Button";
-import {FlatList} from 'react-native'
+import {Alert, FlatList} from 'react-native'
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import { AddVaccineModal } from "./Components/AddVaccineModal";
-import {
-        VaccinationContainer,
-        VaccinationContent,
-        Vaccines,
+import { VaccinationContainer,
+         VaccinationContent,
+         Vaccines,
          Vaccine,
          VaccineName,
          VaccineDate,
          ButtonWrapper,
 
 } from "./style";
-
-
-
 
 export interface vaccineProps {
     id: string,
@@ -29,6 +26,10 @@ export function Vaccination (){
     const [modalIsVisible, setModaIsVisible] = useState(false)
     const [vaccines, setVaccines] = useState<vaccineProps[]>([])
 
+    function showMoreVaccinationData(title: string, observation: string| undefined){
+        Alert.alert(title, observation)
+    }
+
     function closeModal(){
         setModaIsVisible(false)
     }
@@ -37,10 +38,32 @@ export function Vaccination (){
         setModaIsVisible(true)
     }
 
-    function addNewVaccine(newVaccine: vaccineProps){
+    async function   getVaccines(){
+        const dataKey = '@saudebaby'
+        const vaccinesResponse = await AsyncStorage.getItem(`${dataKey}/vaccines`)
+
+        if(vaccinesResponse) {
+            const storage = JSON.parse(vaccinesResponse)
+            setVaccines(storage)
+        }
+        
+    }
+
+    async function addNewVaccine(newVaccine: vaccineProps){
         const vaccinesWithMoreOneVaccine = [newVaccine, ...vaccines]
+    
+        const dataKey = '@saudebaby'
+        const vaccinesToLocalSorage = JSON.stringify(vaccinesWithMoreOneVaccine)
+        await AsyncStorage.setItem(`${dataKey}/vaccines`,vaccinesToLocalSorage)
+        
         setVaccines(vaccinesWithMoreOneVaccine)
     }
+
+    useEffect(()=>{
+
+        getVaccines()
+    }, [])
+
 
     return(
 
@@ -53,7 +76,7 @@ export function Vaccination (){
                             data={vaccines}
                             keyExtractor={item => item.id}
                             renderItem= {({item})=> (
-                                <Vaccine>
+                                <Vaccine onPress={() => showMoreVaccinationData(item.name, item.observation)}>
                                     <VaccineName>
                                         {item.name}            
                                     </VaccineName>

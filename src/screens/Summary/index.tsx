@@ -1,12 +1,14 @@
+import {useState} from 'react'
 import { Header } from "../../components/Header";
+
 import {SumaryContainer,
         SumaryContaint,
         CardTitle,
         Card
     } from "./style";
-import {useState} from 'react'
 import { GrowModal } from "./Components/GrowModal";
-import { TemperatureModal } from "./Components/TemperatureModal";
+import {TemperatureModal} from "./Components/TemperatureModal";
+
 export function Summary (){
     const [isVisebleGrownModal, setIsVisibleGrownModal] = useState(false)
 
@@ -17,6 +19,15 @@ export function Summary (){
             setIsVisibleGrownModal(false)
         }
         
+
+    const [isVisebleTemperatureModal,setIsVisibleTemperatureModal] = useState (false)
+
+        function OpenTemperatureModal (){
+            setIsVisibleTemperatureModal(true)
+        }
+        function CloseTemperatureModal (){
+            setIsVisibleTemperatureModal(false)
+        }
     return (
         <SumaryContainer>
             <Header title="Resumo"/>
@@ -28,15 +39,19 @@ export function Summary (){
                     </CardTitle>
                 </Card>
 
-                <Card onPress={TemperatureModal}>
-                    <CardTitle>
+                <Card onPress={OpenTemperatureModal}>
+                    <CardTitle >
                         Temperatura
                     </CardTitle>
                 </Card>
                 
             </SumaryContaint>
+
+            <TemperatureModal CloseModal={CloseTemperatureModal} visible={isVisebleTemperatureModal}/>
+
             <GrowModal CloseGrowModal={CloseGrowModal} visible={isVisebleGrownModal}/>
-            {/*<GrowTemperatureModal />*/}
+           
+            
         </SumaryContainer>
     )
 }

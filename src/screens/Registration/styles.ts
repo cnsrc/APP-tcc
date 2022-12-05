@@ -9,17 +9,14 @@ export const Logo =styled.Image`
 `
 export const Header = styled.View`
         margin-top: 100px;
- `
-
+`
 export const RegistrationContent = styled.View`
         flex: 1;
-        margin-top: 30px;
- 
+        margin-top: 20px;
 `
 export const InputsArea = styled.View`
         padding: 24px;
         width: 100%;
-    
 `
 export const Button = styled.TouchableOpacity`
         margin-top: 65px;
@@ -29,21 +26,14 @@ export const Button = styled.TouchableOpacity`
         margin-top: -15px;
         border-radius: 6px;
         align-items: center;
-        
-        
-        
 `
 export const Footer = styled.View`  
-        flex: 1;
-        margin-top: 70px;
+        height: 208px;
+        margin-top: 50px;
         background-color: ${props => props.theme.colors.blue300};
-        align-items: center;
-`
+        align-items: center;`
 export const OpenButton = styled.Text`
         color: ${({theme}) => theme.colors.white} ;
         font-size: 18px;
         padding: 16px;
-        
-        
-        
 `

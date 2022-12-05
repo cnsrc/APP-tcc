@@ -1,50 +1,55 @@
-import { Modal, ModalProps, TouchableWithoutFeedback } from "react-native"
-import { useState} from "react"
-import { Header } from "../../../../components/Header"
-import { TemperatureContainer,
-         Overlay,
-         TemperatureContent,
-         Title,
-         Historic,
-         Date,
-         Degees,
+import React from "react"
+import { Modal, ModalProps, TouchableWithoutFeedback, ScrollView } from "react-native"
 
-    } from "./style"
+import { Data, Historic, HistoricType, Label, Overlay, TemperatureModalContainer, TemperatureModalContent, Title } from "./style"
 
 interface TemperatureModalProps extends ModalProps {
     CloseModal : () => void
 }
 
-export function TemperatureModal (props:TemperatureModalProps){
-    const [isVisebleTemperatureModal,setIsVisibleTemperatureModal] = useState (false)
+export function TemperatureModal ({CloseModal, ...rest}:TemperatureModalProps){
 
-    function OpenTemperatureModal (){
-
-    function CloseTemperatureModal (){
-        setIsVisibleTemperatureModal(true)
+    function handleCloseModal(){
+        CloseModal()
     }
-
-    }
-
     return(
-        <Modal {...props} statusBarTranslucent transparent>
-            <TouchableWithoutFeedback onPress={() => props.CloseModal()}/>
-
-            <TemperatureContainer>
+        <Modal {...rest} statusBarTranslucent transparent>
+            <TouchableWithoutFeedback onPress={() => handleCloseModal()}  >
                 <Overlay>
-                    <TemperatureContent>
-                        <Title>Histórico Completo</Title>
-                        <Historic>
-                            <Date>
-                                30/06/2022
-                            </Date>
-                            <Degees>
-                                32° C 
-                            </Degees>
-                        </Historic>
-                    </TemperatureContent>
+                    <TemperatureModalContainer>
+                        <Title>Histórico completo</Title>
+                        <TemperatureModalContent>
+
+                            <Historic>
+                                <HistoricType>
+                                    <Label>Data
+                                        {'\n '} 
+                                    </Label>
+                                    <Data>02/09/2022</Data>
+                                    <Data>18/07/2022</Data>  
+                                </HistoricType>
+
+                                <HistoricType>
+                                    <Label>Peso
+                                    {'\n (kg) '}
+                                    </Label>
+                                    <Data>2,250kg</Data>
+                                    <Data>2,100kg </Data>
+                                </HistoricType>
+
+                                <HistoricType>
+                                    <Label>Altura
+                                    {'\n (cm) '}
+                                    </Label>
+                                    <Data>1,48 cm</Data>
+                                    <Data>1,42 cm</Data>
+                                </HistoricType>
+
+                            </Historic>
+                        </TemperatureModalContent>
+                    </TemperatureModalContainer>
                 </Overlay>
-            </TemperatureContainer>
+            </TouchableWithoutFeedback>
         </Modal>
     )
 }

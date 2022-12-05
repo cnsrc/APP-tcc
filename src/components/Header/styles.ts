@@ -2,7 +2,7 @@ import styled from "styled-components/native";
 
 export const HeaderContainer = styled.View`
     width: 100%;
-    height: 130px;
+    height: 122px;
     background-color: ${(props) => props.theme.colors.pink500};
     align-items: center;
     justify-content: center;

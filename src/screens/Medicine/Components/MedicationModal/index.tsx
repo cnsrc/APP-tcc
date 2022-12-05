@@ -1,4 +1,4 @@
-import { Keyboard, Modal, ModalProps, ScrollView, TouchableWithoutFeedback, View } from "react-native";
+import { FlatList, Modal, ModalProps, ScrollView, TouchableWithoutFeedback, View } from "react-native";
 import * as yup from 'yup'
 import {useForm} from 'react-hook-form'
 import {yupResolver} from '@hookform/resolvers/yup'
@@ -7,9 +7,7 @@ import { AddVaccineModalContainer,
         InputsArea,
         Footer,
         Form,
-   
         Overlay,
-        TextArea,
         Icon
     } from "./style";
 import { Button } from "../../../../components/Button";
@@ -26,8 +24,8 @@ const newMedicationSchema = yup.object().shape({
     dose: yup.number().typeError('Apenas números').required('Dose é um campo é obrigatório'),
     observation: yup.string(),
     gap: 
-        yup.number().typeError('digite um número válido')
-        .max(24,'o dia tem apenas 24 horas').required('este campo é obrigatório')
+        yup.number().typeError('Digite um número válido')
+        .max(24,'O dia tem apenas 24 horas').required('Esse campo é obrigatório')
 })
 
 interface newMedicationType {
@@ -74,51 +72,51 @@ export function MedicationModal ({CloseModal,addNewMedication,...rest}:Medicatio
 
                         
                             <Form>
-                                <InputsArea >
-                                    <InputModal 
-                                        control={control}
-                                        name="name"
-                                        placeholder='Nome do rémedio' 
-                                        placeholderTextColor={bluedark}
-                                        error={errors.name && errors.name.message}
-                                    />
+                                
+                                    <InputsArea >
+                                        <InputModal 
+                                            control={control}
+                                            name="name"
+                                            placeholder='Nome do rémedio' 
+                                            placeholderTextColor={bluedark}
+                                            error={errors.name && errors.name.message}
+                                        />
 
-                                    <InputModal 
-                                        control={control}
-                                        name="dose"
-                                        placeholder='Dose'
-                                        keyboardType="numeric"  
-                                        placeholderTextColor={bluedark}
-                                        error={errors.dose && errors.dose.message}
-                                    />
+                                        <InputModal 
+                                            control={control}
+                                            name="dose"
+                                            placeholder='Dose'
+                                            keyboardType="numeric"  
+                                            placeholderTextColor={bluedark}
+                                            error={errors.dose && errors.dose.message}
+                                        />
 
-                                    <InputModal 
-                                        control={control}
-                                        name="gap"
-                                        placeholder='tomar a cada' 
-                                        placeholderTextColor={bluedark}
-                                        keyboardType="numeric"  
-                                        error={errors.gap && errors.gap.message}
-                                    />
+                                        <InputModal 
+                                            control={control}
+                                            name="gap"
+                                            placeholder='Tomar a cada' 
+                                            placeholderTextColor={bluedark}
+                                            keyboardType="numeric"  
+                                            error={errors.gap && errors.gap.message}
+                                        />
 
-                                    <InputModal
-                                        style={{height: 100}}
-                                        control={control}
-                                        name="observation"
-                                        placeholder='Adicionar nota' 
-                                        placeholderTextColor={bluedark}
-                                        error={errors.observation && errors.observation.message}
-                                    />
+                                        <InputModal
+                                            style={{height: 100}}
+                                            control={control}
+                                            name="observation"
+                                            placeholder='Adicionar nota' 
+                                            placeholderTextColor={bluedark}
+                                            error={errors.observation && errors.observation.message}
+                                        />
 
-                                </InputsArea>
+                                    </InputsArea>
                             
-
-                                <Footer>
-                                    <Button title="Salvar rémedio" onPress={handleSubmit(handleAddNewMedication)}/>
-                                </Footer>    
-
+                                    <Footer>
+                                        <Button title="Salvar rémedio" onPress={handleSubmit(handleAddNewMedication)}/>
+                                    </Footer>   
                             </Form>
                         </AddVaccineModalContainer>
+
 
                     </Overlay>
         

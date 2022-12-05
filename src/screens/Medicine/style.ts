@@ -4,20 +4,17 @@ import { Ionicons } from '@expo/vector-icons';
 export const MedicationContainer = styled.View`
         flex: 1;
         background-color: ${({theme})=>theme.colors.white100};
-
 `
-export const MedicationContent = styled.View`
+        export const MedicationContent = styled.View`
         margin-top: 62px;
         flex: 1;
         padding-bottom: 35px;
         justify-content: space-between;
-
 `
-export const Medicines = styled.View`
-        
+        export const Medicines = styled.View`
         padding: 0 28px;
 `
-export const Medicine = styled.View`
+        export const Medicine = styled.View`
         height: 48px;
         align-items: center;
         padding: 0 9px 0 19.31px;
@@ -31,14 +28,10 @@ export const Medicine = styled.View`
         margin-top: 8px;
         flex-direction: row;
         justify-content: space-between;
-
-        
 `
 export const MedicineActions = styled.View`
         flex-direction: row;
-         
         align-items: center;
-        
 `
 export const MedicineName = styled.Text`
         color: ${({theme})=>theme.colors.blue600};

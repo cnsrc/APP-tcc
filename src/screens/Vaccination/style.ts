@@ -16,7 +16,7 @@ export const Vaccines = styled.View`
     
 `
 
-export const Vaccine = styled.View`
+export const Vaccine = styled.TouchableOpacity`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
